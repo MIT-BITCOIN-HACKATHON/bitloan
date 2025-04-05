@@ -172,6 +172,8 @@ class LNbits:
         # Convert response to dict and add payment_request field
         response_dict = response.json()
         response_dict["payment_request"] = response_dict["bolt11"]
+        # Convert amount from millisats to sats
+        response_dict["amount"] = response_dict["amount"] // 1000
 
         # Converting a json dict into a model
         return Invoice(**response_dict)
@@ -203,7 +205,7 @@ class LNbits:
         )
 
         # Checking for errors
-        if response.status_code != 200:
+        if response.status_code >= 400:
             raise Exception(
                 f"Couldn't create an invoice.\n"
                 f"Response status code: {response.status_code}\n"
