@@ -36,19 +36,50 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+**macOS/Linux (Zsh users experiencing compdef errors):**
+```
+source .venv/bin/activate.zsh
+```
+
 ### 3. Install dependencies:
 
 ```
 pip install fastapi uvicorn
 ```
 
+## Project Structure
+
+The backend is organized as follows:
+
+- **app/**: Main application package
+  - **main.py**: Entry point for the FastAPI application
+  - **models/**: Database models/schemas (Pydantic models for data validation)
+  - **database/**: Database connection and configuration
+  - **dependencies/**: Dependency injection components
+  - **services/**: Business logic implementation
+  - **routers/**: API route definitions
+  - **utils/**: Utility functions and helper code
+- **main.py**: Root level application entry point
+- **.venv/**: Virtual environment (generated when set up)
+- **__pycache__/**: Python cache files (automatically generated)
+
 ## Running the API
 
 ### Start the server:
 
-**Using uvicorn directly:**
+**Using uvicorn directly (main.py in root):**
 ```
 uvicorn main:app --reload
+```
+
+**Using uvicorn with app/main.py:**
+```
+uvicorn app.main:app --reload
+```
+
+**Using the fastapi CLI (if fastapi-cli is installed):**
+```
+fastapi dev app/main.py
 ```
 
 **Running the Python script:**
