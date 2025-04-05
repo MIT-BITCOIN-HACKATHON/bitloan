@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Request
+from app.services.voltage import Voltage
 
 router = APIRouter()
 
