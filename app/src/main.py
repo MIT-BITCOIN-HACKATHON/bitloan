@@ -33,10 +33,10 @@ def main() -> None:
 
         # Ask user role
         while True:
-            role = input("Are you Borrower or Lender?: ").upper()
+            role = input("Are you Borrower 'B' or Lender 'L'?: ").upper()
             if role in ['B', 'L']:
                 break
-            print("Please enter 'Borrower' or 'Lender'")
+            print("Please enter 'B' for Borrower or 'L' for Lender")
 
         if role == 'B':
             # Borrower flow
@@ -65,7 +65,7 @@ def main() -> None:
             print(f"Loan Approved for {invoice_borrower.amount} sats")
 
         else:
-            # Lender flow
+            # Lender Repayment flow
             while True:
                 try:
                     amount = int(input("Please input Sats to repay: "))
