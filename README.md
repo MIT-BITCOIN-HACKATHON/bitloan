@@ -19,7 +19,7 @@ The platform is built with an emphasis on **speed**, **security**, and **usabili
 
 ## 📺 Watch the Demo Video
 
-👉 [Click here to watch the demo](https://your-video-link.com)  
+👉 [Click here to watch the demo](https://www.youtube.com/watch?v=qzWmGha4p5U&t=2s)  
 
 
 ---
